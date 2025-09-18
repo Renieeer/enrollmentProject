@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrollment System</title>
+  <link rel="stylesheet" href="front.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">Enrollment System</div>
+  </nav>
+
+  <div class="container">
+
+    <!-- Enroll Student -->
+    <div class="card">
+  <h2>Inserting Student</h2>
+  <form id="studentForm">
+    <label for="stud_id">Student ID</label>
+    <input type="number" id="stud_id" name="stud_id" required />
+
+    <label for="first_name">First Name</label>
+    <input type="text" id="first_name" name="first_name" required />
+
+    <label for="middle_name">Middle Name</label>
+    <input type="text" id="middle_name" name="middle_name" />
+
+    <label for="last_name">Last Name</label>
+    <input type="text" id="last_name" name="last_name" required />
+
+    <label for="program_id">Program ID</label>
+    <input type="number" id="program_id" name="program_id" required />
+
+    <label for="allowance">Allowance</label>
+    <input type="text" id="allowance" name="allowance" required />
+
+    <label for="birth_date">Birth Date</label>
+    <input type="date" id="birth_date" name="birth_date" />
+
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender">
+      <option value="">--Select--</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+
+    <label for="address">Address</label>
+    <input type="text" id="address" name="address" />
+
+    <label for="contact_number">Contact Number</label>
+    <input type="text" id="contact_number" name="contact_number" />
+
+    <button type="submit">Insert Student</button>
+    <div id="response" class="message" style="display:none;"></div>
+  </form> 
+</div>
+
+<div class="card">
+  <h2>Student Records</h2>
+  <button id="btn_student" class="btn-secondary">Show Students</button>
+  <table id="stud" class="styled-table"></table>
+  <button id="editBtnStudent" class="edit">EDIT</button>
+  <button id="deleteBtnStudent" class="delete">Delete</button>
+</div>
+
+  <div class="card">
+    <h2>Enroll Student</h2>
+    <form id="enrollmentForm">
+      <label for="stud_id">Student ID</label>
+      <input type="number" id="stud_id" name="stud_id" required />
+
+      <label for="sem_id">Semester ID</label>
+      <input type="number" id="sem_id" name="sem_id" required />
+
+      <label for="year_id">Year ID</label>
+      <input type="number" id="year_id" name="year_id" required />
+
+      <label for="status">Status</label>
+      <select id="status" name="status" required>
+        <option value="Enrolled">Enrolled</option>
+        <option value="Dropped">Dropped</option>
+        <option value="Completed">Completed</option>
+      </select>
+
+      <button type="submit">Insert Enrollment</button>
+      <div id="response1" class="message" style="display:none;"></div>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Enrollment Records</h2>
+    <button id="btn_enrollment" class="btn-secondary">Show Enrollments</button>
+    <table id="enroll" class="styled-table"></table>
+    <button id="editBtnEnrollment" class="edit">EDIT</button>
+    <button id="deleteBtnEnrollment" class="delete">DELETE</button>
+  </div>
+
+
+
+    <!-- Program -->
+    <div class="card">
+      <h2>Insert Program</h2>
+      <form id="programForm">
+        <label for="program_id">Program ID</label>
+        <input type="number" id="program_id" name="program_id" required />
+
+        <label for="program_name">Program Name</label>
+        <input type="text" id="program_name" name="program_name" required />
+
+        <label for="ins_id_prog">Institute ID</label>
+        <input type="number" id="ins_id_prog" name="ins_id" required />
+
+        <button type="submit">Insert Program</button>
+        <div id="responseProgram" class="message" style="display:none;"></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Programs</h2>
+      <button id="btn_program" class="btn-secondary">Show Programs</button>
+      <table id="prog" class="styled-table"></table>
+      <button id="editBtnProgram" class="edit">EDIT</button>
+      <button id="deleteBtnProgram" class="delete">Delete</button>
+    </div>
+
+    <!-- Year -->
+    <div class="card">
+      <h2>Insert Year</h2>
+      <form id="yearForm">
+        <label for="year_id">Year ID</label>
+        <input type="number" id="year_id" name="year_id" required />
+
+        <label for="year_from">Year From</label>
+        <input type="number" id="year_from" name="year_from" required />
+
+        <label for="year_to">Year To</label>
+        <input type="number" id="year_to" name="year_to" required />
+
+        <button type="submit">Insert Year</button>
+        <div id="responseYear" class="message" style="display:none;"></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Years</h2>
+      <button id="btn_year" class="btn-secondary">Show Years</button>
+      <table id="Year" class="styled-table"></table>
+      <button id="editBtnYear" class="edit">EDIT</button>
+      <button id="deleteBtnYear" class="delete">Delete</button>
+    </div>
+
+    <!-- Semester -->
+    <div class="card">
+      <h2>Insert Semester</h2>
+      <form id="semesterForm">
+        <label for="sem_id">Semester ID</label>
+       <input type="number" name="sem_id"  required>
+
+
+        <label for="sem_name">Semester Name</label>
+        <input type="text" id="sem_name" name="sem_name" required />
+
+        <label for="year_id">Year ID</label>
+        <input type="number" id="year_id" name="year_id" required />
+
+        <button type="submit">Insert Semester</button>
+        <div id="semesterResponse" style="display:none"></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Semesters</h2>
+      <button id="btn_semester" class="btn-secondary">Show Semesters</button>
+      <table id="semster" class="styled-table"></table>
+      <button id="editBtnSemester" class="edit">EDIT</button>
+      <button id="deleteBtnSemester" class="delete">Delete</button>
+    </div>
+
+    <!-- Subject -->
+    <div class="card">
+      <h2>Insert Subject</h2>
+      <form id="subjectForm">
+        <label for="subject_id">Subject ID</label>
+        <input type="number" id="subject_id" name="subject_id" required />
+
+        <label for="subject_name">Subject Name</label>
+        <input type="text" id="subject_name" name="subject_name" required />
+
+        <label for="sem_id_subject">Semester ID</label>
+        <input type="number" id="sem_id_subject" name="sem_id" required />
+
+        <button type="submit">Insert Subject</button>
+        <div id="responseSubject" class="message" style="display:none;"></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Subjects</h2>
+      <button id="btn_subject" class="btn-secondary">Show Subjects</button>
+      <table id="subject" class="styled-table"></table>
+      <button id="editBtnSubject" class="edit">EDIT</button>
+      <button id="deleteBtnSubject" class="delete">Delete</button>
+    </div>
+
+  </div> <!-- end container -->
+
+  <script src="front.js"></script>
+</body>
+</html>
